@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alfajores 25/7</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="#productos">Alfajores TodoTiempo</a>
+    <nav class="header__acciones">
+      <a href="#productos">Alfajores</a>
+      <a href="#carrito"> Carrito <span id="contadorCarrito" class="contador">0</span></a>
+      <button id="btnTema" class="btn btn--secundario" type="button"> Oscuro</button>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section id="productos">
+      <h1>Alfajores artesanales</h1>
+      <p class="suave">Elegí tu favorito, sumalo al carrito y listo.</p>
+      <div class="controles">
+        <div id="filtros" class="filtros"></div>
+        <input id="inputBusqueda" type="search" placeholder="Buscar alfajor..." aria-label="Buscar alfajor">
+      </div>
+      <p id="contadorProductos" class="suave"></p>
+      <div id="grillaProductos" class="grilla"></div>
+      <p id="sinResultados" class="vacio oculto">Ningún alfajor coincide con tu búsqueda. Probá con otra palabra o categoría.</p>
+    </section>
+
+    <aside id="carrito" class="panel">
+      <h2>Tu carrito</h2>
+      <p id="carritoVacio" class="vacio">Todavía no sumaste alfajores. Elegí uno del catálogo.</p>
+      <div id="listaCarrito"></div>
+      <p class="total">Total <strong id="total">$0</strong></p>
+      <button id="btnVaciar" class="btn btn--secundario" type="button">Vaciar carrito</button>
+
+      <h2 id="checkout">Finalizar compra</h2>
+      <form id="formCheckout" novalidate>
+        <label>Nombre y apellido
+          <input name="nombre" type="text" autocomplete="name">
+          <span class="error" data-error="nombre"></span>
+        </label>
+        <label>Correo electrónico
+          <input name="email" type="email" autocomplete="email">
+          <span class="error" data-error="email"></span>
+        </label>
+        <label>Teléfono
+          <input name="telefono" type="tel" autocomplete="tel">
+          <span class="error" data-error="telefono"></span>
+        </label>
+        <label>Dirección de entrega
+          <input name="direccion" type="text" autocomplete="street-address">
+          <span class="error" data-error="direccion"></span>
+        </label>
+        <button class="btn" type="submit">Confirmar compra</button>
+        <p id="mensajeExito" class="exito oculto">¡Compra confirmada! Te escribimos al correo para coordinar la entrega.</p>
+      </form>
+    </aside>
+  </main>
+
+  <div id="spinner" class="spinner oculto" role="status" aria-label="Cargando"><div class="spinner__rueda"></div></div>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
